@@ -1,23 +1,94 @@
-.sliced {
-  position: relative;
-  width: 640px;
-  height: 400px;
+.row {
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.tile { 
-  float: left;
-  opacity: 1;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
+
+body { 
+  background: url("background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-.tile-animated {
-  opacity: 0;
+
+.container{
+  padding: 20px;
 }
-.css3-preload .sliced * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+
+
+
+
+
+#foodmenu {
+
+}
+
+#foodselector {
+
+}
+
+#itempreviewimage {
+
+}
+
+#itemdescription {
+  height:200px;
+  background: white;
+}
+
+#menutable{
+  height:150px;
+}
+
+
+
+
+
+.tile {
+  background: #CCCCCC;
+  //padding: 5px;
+  border-radius: 8px;
+}
+
+.menutile {
+  background: #CCCCCC;
+  //padding: 5px;
+  border-radius: 8px;
+}
+
+.tilemenuitem {
+  //margin: 0px -5px;
+}
+
+.tiletest {
+  background: #990099;
+  border-radius: 4px;
+  border: solid 3px white;
+  padding: 5px;
+  margin: 10px -12px;
+}
+
+.outertile{
+  padding: 0px;
+  margin: 0px;
+  background: #1111AA;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#orangeembed{
+
+}
+
+#houdini{
+  background:#009911;
 }
