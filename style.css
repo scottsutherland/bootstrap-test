@@ -1,0 +1,23 @@
+.sliced {
+  position: relative;
+  width: 640px;
+  height: 400px;
+}
+.tile { 
+  float: left;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+}
+.tile-animated {
+  opacity: 0;
+}
+.css3-preload .sliced * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
