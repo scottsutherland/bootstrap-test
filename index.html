@@ -3,174 +3,251 @@
 <head> 
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <meta charset="utf-8">  
-<title>Bootstrap demo</title>  
+<title>Out of this World</title>  
 <link rel="stylesheet" href="style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="jquery.sliced.js"></script> 
+<script src="javascript.js"></script> 
+
+<!-- Optional: Include the jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<!-- Optional: Include the jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script>
+
+var appetizer_items = [
+  {
+    "name":"Pickles",
+    "image":"2.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Lord of the Fries",
+    "image":"3.jpg",
+    "price":"59",
+  }
+];
+
+
+var entree_items = [
+  {
+    "name":"Lord of the Wings",
+    "image":"1.jpg",
+    "price":"59",
+    "description":"Descipttion of the food",
+  },
+  {
+    "name":"Sushi",
+    "image":"2.jpg",
+    "price":"35",
+    "description":"Descipttion of the food",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"3.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Lord of the Wings",
+    "image":"4.jpg",
+    "price":"13",
+  },
+  {
+    "name":"Sushi",
+    "image":"5.jpg",
+    "price":"255",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"6.jpg",
+    "price":"7",
+  },
+  {
+    "name":"Lord of the Wings",
+    "image":"7.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Sushi",
+    "image":"8.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"9.jpg",
+    "price":"59",
+  },
+    {
+    "name":"Sushi",
+    "image":"10.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"11.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Lord of the Wings",
+    "image":"12.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Sushi",
+    "image":"13.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"14.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Lord of the Wings",
+    "image":"15.jpg",
+    "price":"59",
+  }
+];
+
+var thumbnail_table = [];
+
+var loadentrees = function(){
+    $("#menutable div.row").empty();
+    for (var ibz=1; ibz<=entree_items.length; ibz++){
+        $("#menutable div.row").append("<div class='col-xs-3 col-sm-2 col-md-1 col-lg-1 foodThumbnailholder'><div class='foodThumbnail'><img onclick='load_entree_item(" + ibz + ")' id='entree_item_" + ibz + "' src='previewimages/entrees/" + entree_items[ibz-1].image + "'><span class='foodThumbnailNumber'>#" + ibz + "</span></div></div>");
+    };
+
+};
+
+var teststring = "testingstring";
+
+var load_entree_item = function(item){
+
+
+    var img_url = "previewimages/entrees/" + item + ".jpg";
+    $("#itempreviewimage").append("Entree item #" + item + " added. ");
+    $("#itempreviewimage").css("background-image", "url(" + img_url + ")");
+
+
+
+    $("#itemdescription .productdescription").empty();
+    $("#itemdescription .productdescription").append(entree_items[item - 1].description);
+
+
+
+}
+
+
+
+
+var toggleMenuGroup = function(){
+    $("#foodmenugroup").slideToggle();
+}
+
+
+var toggleCheckoutGroup = function(){
+    $("#checkoutgroup").slideToggle();
+}
+
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        loadentrees();
+    });
+  $("#btn2").click(function(){
+    loadappetizers();
+    });
+    $("#btn3").click(function(){
+        loaddrinks();
+    });
+})
+
+</script>
 
 </head>  
 <body>
 
-
-
 <div class="container">
 
-  <h1>Restaurant Name</h1>     
-      <div class="row">
-        <div class="col-xs-2 col-sm-4 col-md-9 col-lg-6 tile">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="col-xs-9 col-sm-4 col-md-1 col-lg-6 tile" style="height:300px;">
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 tile">The first small tile text here tile class 
-      </div>
-      <div class="hidden-xs col-sm-4 col-md-3 col-lg-3 tile" id="houdini">Some text in a second tile class.  This will disappear when it gets to the Extra-Small  sizes.
-      </div>
-    </div>  
-    <div class="row tilemenu">
-      <div class="col-xs-6 col-sm-4 col-md-9 col-lg-5 tile">The beginning tile of the second line up in here. eginning tile of the second line up in here.eginning tile of the second line up in here.eginning tile of the seco and then right in the middle of appears a:
+ 
 
-        <div class="row">
-        <div id="orangeembed" class="col-xs-6 col-sm-2 col-md-3 col-lg-12 tilemenuitem" style="background:#FF9911"> Something in the orange here.
-        </div>
-        </div>
 
-        nd line up in here.eginning tile of the second line up in here.eginning tile of the second line up in here.eginning tile of the second line up in here.eginning tile of the second line up in here.eginning tile of the second line up in here.
-      </div>
+
+
+
+   <h1>Intergalactic Burger Empire</h1>  
+
+
+    <div class="row" style="background:#444555;">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="toggleMenuGroup()">
+        <h2> Food Menu </h2>
+        </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-    <div class="row" style="height:40px;background:#444555;">
-    </div>
 
     <div class="row">
-      <div class="col-xs-12" id="foodmenu">
-      <h2> Food Menu </h2>
-      <a href="">Entrees | Appetizers | Drinks</a>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="foodmenugroup">
+
+        <h3> Select your items below </h3>
+
+
+
         
 
-        <div id="foodselector">
+
+        <div id="fooditemselector">
+
           <div id="itempreviewimage">
             image goes here
           </div>
+
           <div id="itemdescription">
-            <span> specific description text </span>
+            <span class="productdescription"> specific description text </span>
             other item details
           </div>
+
+          <div>
+            <button id="btn1">Entrees</button><button id="btn2">Appetizers</button><button id="btn3">Drinks</button>
+            </div>
+
           <div id="menutable">
-            Item table here
+              <div class="row">
+              </div>
           </div>
-          <div id="foodselectorfooter">
+
+          <div id="fooditemselector-footer">
             The footer is here.
           </div>
-         </div>
+        </div>
 
 
       </div>
     </div>
 
 
-    <div class="row" id="customerorder">
-      <h2> Your Order </h2>
-      Details of customer order
+
+
+
+    <div class="row" style="background:#444555;">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="toggleCheckoutGroup()">
+        <h2> Your Order </h2>
+        </div>
     </div>
-
-    <div class="row" style="height:40px;background:#444555;">
-    </div>
-
-
-
-
-
-
-
-
-
 
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tile"> There is a lot of writing to be placed within here. There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.There is a lot of writing to be placed within here.
-      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="checkoutgroup">
+        Add items from the Food Menu and they will show up here!
+    </div>
     </div>
 
-
-
-    <div class="row" style="background-color:yellow;">
-
-      <div class="col-md-9" style="background-color:green;">
-       
-        <div style="background-color:lightblue;">div 1: .col-md-9  And maybe some other text.</div>
-
-        <div class="row">
-          <div class="col-md-4 outertile">
-
-
-
-          <div class="col-md-6 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-          <div class="col-md-6 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-
-
-          </div>
-          <div class="col-md-4 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-          <div class="col-md-4 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>          
-        </div>
-
-        <div class="row">
-          <div class="col-md-2 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-           <div class="col-md-2 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-                    <div class="col-md-2 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-                    <div class="col-md-2 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-                    <div class="col-md-2 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>
-                    <div class="col-md-2 outertile">
-            <div class="tiletest">div 2: .col-md-6</div>
-          </div>        
-        </div>
-
-
-
-      </div> 
-
-
-      <div class="col-md-3" style="background-color:green;">
-        <div style="background-color:lightblue;">The second div goes over hereThe second div goe over hereThe second div goes over hereThe oes over hereThe second div goes over hereThe second div goes over hereThe second div goes over here</div>
-      </div>
-   
-    </div>
 
 
 
@@ -178,7 +255,6 @@
 
 
 </div>
-
 
 
 </body>
