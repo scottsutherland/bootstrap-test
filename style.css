@@ -10,7 +10,7 @@ html {overflow-y: scroll;}
 
 
 
-.container h1, .container h2 {
+#maincontainer h1, #maincontainer h2 {
     color: white;
 }
 
@@ -20,7 +20,7 @@ html {overflow-y: scroll;}
   //margin-right: 20px;
 }
 
-.container{
+#maincontainer{
   padding: 0px;
   background-color: rgba(0,0,0,0.4);
 }
@@ -86,7 +86,22 @@ span.foodThumbnailNumber {
 
 
 
+#bigpicture{
+  width:100%;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+}
 
+#bigpicturenumber{
+  color:white;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6), 1px 1px 3px rgba(0,0,0,0.6);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
 
 
 
@@ -100,15 +115,15 @@ span.foodThumbnailNumber {
 }
 
 #itempreviewimage {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  //background: #22AA77;
+  //border-top-left-radius: 5px;
+  //border-top-right-radius: 5px;
   background-size: 100%;
+  position: relative;
 
 }
 
 #menutable{
-  height:150px;
+  //height:300px;
   padding:5px;
 }
 

@@ -115,6 +115,51 @@ var entree_items = [
     "name":"Lord of the Wings",
     "image":"15.jpg",
     "price":"59",
+  },
+    {
+    "name":"Lord of the Wings",
+    "image":"16.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Sushi",
+    "image":"17.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"18.jpg",
+    "price":"59",
+  },
+    {
+    "name":"Sushi",
+    "image":"19.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"20.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Lord of the Wings",
+    "image":"21.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Sushi",
+    "image":"22.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Vegetarian Dish",
+    "image":"23.jpg",
+    "price":"59",
+  },
+  {
+    "name":"Lord of the Wings",
+    "image":"24.jpg",
+    "price":"59",
   }
 ];
 
@@ -123,19 +168,18 @@ var thumbnail_table = [];
 var loadentrees = function(){
     $("#menutable div.row").empty();
     for (var ibz=1; ibz<=entree_items.length; ibz++){
-        $("#menutable div.row").append("<div class='col-xs-3 col-sm-2 col-md-1 col-lg-1 foodThumbnailholder'><div class='foodThumbnail'><img onclick='load_entree_item(" + ibz + ")' id='entree_item_" + ibz + "' src='previewimages/entrees/" + entree_items[ibz-1].image + "'><span class='foodThumbnailNumber'>#" + ibz + "</span></div></div>");
+        $("#menutable div.row").append("<div class='col-xs-3 col-md-3 foodThumbnailholder'><div class='foodThumbnail'><img onclick='load_entree_item(" + ibz + ")' id='entree_item_" + ibz + "' src='previewimages/entrees/thumbnails/" + entree_items[ibz-1].image + "'><span class='foodThumbnailNumber'>#" + ibz + "</span></div></div>");
     };
 
 };
 
-var teststring = "testingstring";
+
 
 var load_entree_item = function(item){
 
-
-    var img_url = "previewimages/entrees/" + item + ".jpg";
-    $("#itempreviewimage").append("Entree item #" + item + " added. ");
-    $("#itempreviewimage").css("background-image", "url(" + img_url + ")");
+    var img_url = "previewimages/entrees/renders/" + item + ".jpg";
+    $("#bigpicture").attr("src",img_url);
+    $("#bigpicturenumber").html(String("#" + item));
 
 
 
@@ -143,8 +187,9 @@ var load_entree_item = function(item){
     $("#itemdescription .productdescription").append(entree_items[item - 1].description);
 
 
-
 }
+
+
 
 
 
@@ -175,20 +220,24 @@ $(document).ready(function(){
 </head>  
 <body>
 
-<div class="container">
-
- 
 
 
 
 
 
-   <h1>Intergalactic Burger Empire</h1>  
 
+
+
+
+
+
+<div class="container" id="maincontainer">
+
+    <div style="padding:10px;padding-left:0px;"><img src="images/header.gif" style="width:200px;"></div>
 
     <div class="row" style="background:#444555;">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="toggleMenuGroup()">
-        <h2> Food Menu </h2>
+        <span>Food Menu </span>
         </div>
     </div>
 
@@ -203,33 +252,55 @@ $(document).ready(function(){
         
 
 
-        <div id="fooditemselector">
+            <div id="fooditemselector">
 
-          <div id="itempreviewimage">
-            image goes here
-          </div>
+                <div class="col-xs-12 col-md-8">
 
-          <div id="itemdescription">
-            <span class="productdescription"> specific description text </span>
-            other item details
-          </div>
+                    <div id="itempreviewimage">
+                        <img src="previewimages/entrees/renders/1.jpg" id="bigpicture">
+                        <span id="bigpicturenumber"></span>
 
-          <div>
-            <button id="btn1">Entrees</button><button id="btn2">Appetizers</button><button id="btn3">Drinks</button>
+                    </div>
+
+                    <div id="itemdescription">
+                        <span class="productdescription"> specific description text </span>
+                        other item details
+                    </div>
+
+
+
+                        <div class="col-xs-6" style="border-bottom-left-radius:20px;padding:20px;margin:0px;text-align:center;background-color:#EE5555;color:white;"> Price </div>
+
+                        <div class="col-xs-6" style="border-bottom-right-radius:20px;padding:20px;margin:0px;text-align:center;background-color:#55EE55;color:white;"> Add to Order! </div>
+
+
+                 </div>
+
+                 <div class="col-xs-12 col-md-4">
+
+
+
+                    <div>
+                        <button id="btn1">Entrees</button><button id="btn2">Appetizers</button><button id="btn3">Drinks</button>
+                    </div>
+
+
+                    <div id="menutable">
+                        <div class="row">
+                        </div>
+                    </div>
+
+                 </div>
+
+
             </div>
 
-          <div id="menutable">
-              <div class="row">
-              </div>
-          </div>
-
-          <div id="fooditemselector-footer">
+        <div id="fooditemselector-footer">
             The footer is here.
-          </div>
         </div>
 
 
-      </div>
+        </div>
     </div>
 
 
@@ -238,7 +309,7 @@ $(document).ready(function(){
 
     <div class="row" style="background:#444555;">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="toggleCheckoutGroup()">
-        <h2> Your Order </h2>
+        <span> Your Order </span>
         </div>
     </div>
 
@@ -254,7 +325,21 @@ $(document).ready(function(){
 
 
 
+
+
+
 </div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+Home | About | Contact
+        </div>
+    </div>
+
+</div>
+
 
 
 </body>
